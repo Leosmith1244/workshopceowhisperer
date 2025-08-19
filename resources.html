@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Tools - The CEO Whisperer Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === TOASTMASTERS BRAND COLORS === */
+        :root {
+          --maroon: #772432;
+          --blue: #004165;
+          --gray: #A9B2B1;
+          --yellow: #F2DF74;
+          --white: #FFFFFF;
+          --black: #000000;
+        }
+
+        /* === BASE STYLES === */
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          font-family: 'Open Sans', sans-serif;
+          line-height: 1.6;
+          color: var(--black);
+          margin: 0;
+          padding: 0;
+          background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        .section {
+          padding: 5rem 0;
+        }
+
+        .section-dark {
+          background-color: #f8f9fa;
+        }
+
+        .section-title {
+          color: var(--blue);
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          position: relative;
+        }
+
+        .section-title:after {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 4px;
+          background: var(--yellow);
+          margin: 1rem auto;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          color: var(--maroon);
+          margin-bottom: 3rem;
+          font-size: 1.2rem;
+        }
+
+        .btn {
+          display: inline-block;
+          background: var(--yellow);
+          color: var(--black);
+          padding: 0.8rem 1.8rem;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s;
+          border: none;
+          cursor: pointer;
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+          background: #f8d94a;
+        }
+
+        .btn i {
+          margin-left: 0.5rem;
+        }
+
+        .btn-nav {
+          padding: 0.5rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        /* Hero section (general, specific to content pages) */
+        .hero {
+          background-size: cover;
+          background-position: center;
+          color: white;
+          padding: 8rem 1rem;
+          text-align: center;
+          min-height: 50vh; /* Reduced height for content pages */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-content {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .hero h1 {
+          font-size: 3.5rem;
+          margin-bottom: 2rem;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+          line-height: 1.2;
+        }
+
+        /* Page specific content styles */
+        .page-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            border-left: 4px solid var(--maroon);
+        }
+        .resource-card h3 {
+            color: var(--blue);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .resource-card p {
+            margin-bottom: 1rem;
+        }
+        .resource-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        .resource-card ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        .resource-card ul li:before {
+            content: '\f00c'; /* Checkmark icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+            color: var(--yellow);
+        }
+        .resource-card .btn-link {
+            background: var(--blue);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .resource-card .btn-link:hover {
+            background: var(--maroon);
+            transform: translateY(-2px);
+        }
+
+        /* Footer styles (copied from previous immersive) */
+        footer {
+          background: var(--blue);
+          color: white;
+          padding: 3rem 0 0;
+        }
+
+        .footer-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        .footer-brand h3 {
+          color: var(--yellow);
+          margin-bottom: 1rem;
+        }
+
+        .footer-links h3,
+        .footer-social h3 {
+          color: var(--yellow);
+          margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+          display: block;
+          margin-bottom: 0.8rem;
+          transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+          color: var(--yellow);
+        }
+
+        .social-icons {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .social-icons a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba(255,255,255,0.1);
+          border-radius: 50%;
+          transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+          background: var(--yellow);
+          color: var(--black);
+        }
+
+        .footer-bottom {
+          text-align: center;
+          padding: 1.5rem;
+          margin-top: 2rem;
+          border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive styles (copied from previous immersive) */
+        @media (max-width: 768px) {
+          .hero h1 {
+            font-size: 2.5rem;
+          }
+          
+          .hero-subtitle {
+            font-size: 1.2rem;
+          }
+          
+          .nav-container {
+            flex-direction: column;
+            gap: 1rem;
+          }
+          
+          .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          
+          .section {
+            padding: 3rem 0;
+          }
+          
+          .section-title {
+            font-size: 2rem;
+          }
+        }
+        @media (max-width: 576px) {
+            .resource-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   	
+	 <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container container">
+            <a href="index.html" class="logo">PR Pros Toastmasters</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="agenda.html">Agenda & Activities</a>
+                <a href="speakers.html">Speaker Outlines</a>
+                <a href="aida.html">AIDA Model</a> 
+                <a href="resources.html">Resources & Tools</a> <!-- New link -->
+                <a href="index.html#register" class="btn btn-nav">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Resources Page -->
+    <section class="hero" style="background: linear-gradient(rgba(0, 65, 101, 0.8), rgba(0, 65, 101, 0.8)), url('https://images.unsplash.com/photo-1557804506-6927a7c152a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Resources & Tools: Empower Your Brand</h1>
+            <p class="hero-subtitle">Continue your journey to **Authority** with curated templates, checklists, and expert recommendations.</p>
+        </div>
+    </section>
+
+    <!-- Resources Content Section -->
+    <section class="section">
+        <div class="container page-content">
+            <h2 class="section-title">Your Personal Branding Toolkit</h2>
+            <p class="section-subtitle">Everything you need to apply the workshop learnings and elevate your executive presence.</p>
+            
+            <div class="resource-card">
+                <h3><i class="fab fa-linkedin"></i> The Ultimate LinkedIn Glow-Up Checklist</h3>
+                <p>Ensure your LinkedIn profile is a powerful magnet for opportunities. Use this checklist to optimize every section and project undeniable **authority**.</p>
+                <ul>
+                    <li>Compelling Headline Formulas</li>
+                    <li>Engaging "About" Section Prompts</li>
+                    <li>Quantifying Achievements in Experience</li>
+                    <li>Maximizing Skills & Endorsements</li>
+                </ul>
+                <a href="#" class="btn-link">Download Checklist (PDF) <i class="fas fa-download"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <h3><i class="fas fa-person-walking-luggage"></i> Power Pose Visual Guide for Virtual Success</h3>
+                <p>A simple guide with illustrations and tips for adopting confidence-boosting body language during online meetings and presentations. Elevate your perceived **authority** with every stance.</p>
+                <ul>
+                    <li>"The Seated Wonder" Pose</li>
+                    <li>"The Engaged Lean" Technique</li>
+                    <li>Hand Gestures for Impact</li>
+                    <li>Eye Contact Best Practices for Camera</li>
+                </ul>
+                <a href="#" class="btn-link">View Visual Guide <i class="fas fa-eye"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <h3><i class="fas fa-handshake-angle"></i> Craft Your Irresistible Elevator Pitch Template</h3>
+                <p>Don't leave opportunities to chance. Use this worksheet to construct a concise, captivating 30-second pitch that instantly conveys your value and leaves a lasting impression of **authority**.</p>
+                <ul>
+                    <li>Problem-Solution-Impact Framework</li>
+                    <li>Brainstorming Value Propositions</li>
+                    <li>Practice Prompts & Feedback Questions</li>
+                    <li>Examples of Effective Pitches</li>
+                </ul>
+                <a href="#" class="btn-link">Get Your Template (Worksheet) <i class="fas fa-file-alt"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <h3><i class="fas fa-user-tag"></i> Personal Brand Audit Worksheet: Brand or Bland?</h3>
+                <p>A comprehensive worksheet to help you critically evaluate your current personal brand, identify your unique selling propositions, and pinpoint areas for strategic development to enhance your **authority**.</p>
+                <ul>
+                    <li>"Three Words That Define Me" Exercise</li>
+                    <li>Online Presence Consistency Check</li>
+                    <li>Feedback Collection Questions</li>
+                    <li>Action Plan for Brand Enhancement</li>
+                </ul>
+                <a href="#" class="btn-link">Start Your Audit (Worksheet) <i class="fas fa-clipboard-list"></i></a>
+            </div>
+
+            <div class="resource-card">
+                <h3><i class="fas fa-book-open"></i> Recommended Reading & Inspirational Content</h3>
+                <p>Dive deeper into personal branding, leadership, and public speaking with these expert-curated resources.</p>
+                <ul>
+                    <li>**Book:** "Presence" by Amy Cuddy (focus on body language)</li>
+                    <li>**Book:** "Atomic Habits" by James Clear (for consistent self-improvement)</li>
+                    <li>**TED Talk:** <a href="https://www.ted.com/talks/amy_cuddy_your_body_language_may_shape_who_you_are" target="_blank" style="color: var(--yellow); text-decoration: underline;">Amy Cuddy: Your body language may shape who you are</a></li>
+                    <li>**Article:** <a href="https://www.forbes.com/sites/forbescoachescouncil/2023/01/24/the-power-of-personal-branding-in-todays-digital-age/?sh=1a89c3621571" target="_blank" style="color: var(--yellow); text-decoration: underline;">The Power of Personal Branding in Today's Digital Age</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <h3><i class="fas fa-users-gear"></i> Join PR Pros Toastmasters & Continue Your Journey</h3>
+                <p>The best way to solidify your personal branding skills is through consistent practice and supportive feedback. Join PR Pros Toastmasters to refine your public speaking, leadership, and networking abilities.</p>
+                <a href="https://prpros.toastmastersclubs.org/" target="_blank" class="btn-link">Visit Our Club Website <i class="fas fa-external-link-alt"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>PR Pros Toastmasters</h3>
+                <p>Empowering professionals to master the art of public relations and persuasive communication through practical experience and expert guidance.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="agenda.html">Workshop Agenda</a>
+                <a href="speakers.html">Speaker Outlines</a>
+                <a href="aida.html">AIDA Model</a> 
+                <a href="resources.html">Resources & Tools</a>
+                <a href="index.html#register">Enroll in Workshops</a>
+            </div>
+            
+            <div class="footer-social">
+                <h3>Connect With Our Authority</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/PRProsToastmasters/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/PRProsTM" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/pr-pros-toastmasters/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 PR Pros Toastmasters. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AIDA Model Explained - The CEO Whisperer Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* === TOASTMASTERS BRAND COLORS === */
+        :root {
+          --maroon: #772432;
+          --blue: #004165;
+          --gray: #A9B2B1;
+          --yellow: #F2DF74;
+          --white: #FFFFFF;
+          --black: #000000;
+        }
+
+        /* === BASE STYLES === */
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          font-family: 'Open Sans', sans-serif;
+          line-height: 1.6;
+          color: var(--black);
+          margin: 0;
+          padding: 0;
+          background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        .section {
+          padding: 5rem 0;
+        }
+
+        .section-dark {
+          background-color: #f8f9fa;
+        }
+
+        .section-title {
+          color: var(--blue);
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          position: relative;
+        }
+
+        .section-title:after {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 4px;
+          background: var(--yellow);
+          margin: 1rem auto;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          color: var(--maroon);
+          margin-bottom: 3rem;
+          font-size: 1.2rem;
+        }
+
+        .btn {
+          display: inline-block;
+          background: var(--yellow);
+          color: var(--black);
+          padding: 0.8rem 1.8rem;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s;
+          border: none;
+          cursor: pointer;
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+          background: #f8d94a;
+        }
+
+        .btn i {
+          margin-left: 0.5rem;
+        }
+
+        .btn-nav {
+          padding: 0.5rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        /* Hero section (general, specific to index.html) */
+        .hero {
+          background-size: cover;
+          background-position: center;
+          color: white;
+          padding: 8rem 1rem;
+          text-align: center;
+          min-height: 50vh; /* Reduced for content pages */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hero-content {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .hero h1 {
+          font-size: 3.5rem;
+          margin-bottom: 2rem;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+          line-height: 1.2;
+        }
+
+        /* Page specific content styles */
+        .page-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--blue);
+        }
+        .content-card.attention { border-left-color: var(--yellow); }
+        .content-card.interest { border-left-color: var(--maroon); }
+        .content-card.desire { border-left-color: var(--blue); }
+        .content-card.action { border-left-color: var(--gray); }
+
+        .content-card h3 {
+            color: var(--blue);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .content-card p {
+            margin-bottom: 1rem;
+        }
+        .content-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .content-card ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .content-card ul li:before {
+            content: '\f058'; /* Check circle icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--maroon);
+        }
+        .content-card strong {
+            color: var(--maroon);
+        }
+
+        .example-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--yellow);
+            padding: 1rem 1.5rem;
+            margin-top: 1rem;
+            border-radius: 6px;
+        }
+        .example-box p {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .example-box strong {
+            color: var(--blue);
+        }
+
+        /* Footer styles (copied from previous immersive) */
+        footer {
+          background: var(--blue);
+          color: white;
+          padding: 3rem 0 0;
+        }
+
+        .footer-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        .footer-brand h3 {
+          color: var(--yellow);
+          margin-bottom: 1rem;
+        }
+
+        .footer-links h3,
+        .footer-social h3 {
+          color: var(--yellow);
+          margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+          display: block;
+          margin-bottom: 0.8rem;
+          transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+          color: var(--yellow);
+        }
+
+        .social-icons {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .social-icons a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba(255,255,255,0.1);
+          border-radius: 50%;
+          transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+          background: var(--yellow);
+          color: var(--black);
+        }
+
+        .footer-bottom {
+          text-align: center;
+          padding: 1.5rem;
+          margin-top: 2rem;
+          border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive styles (copied from previous immersive) */
+        @media (max-width: 768px) {
+          .hero h1 {
+            font-size: 2.5rem;
+          }
+          
+          .hero-subtitle {
+            font-size: 1.2rem;
+          }
+          
+          .nav-container {
+            flex-direction: column;
+            gap: 1rem;
+          }
+          
+          .nav-links {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          
+          .section {
+            padding: 3rem 0;
+          }
+          
+          .section-title {
+            font-size: 2rem;
+          }
+        }
+        @media (max-width: 576px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   	
+	 <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container container">
+            <a href="index.html" class="logo">PR Pros Toastmasters</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="agenda.html">Agenda & Activities</a>
+                <a href="speakers.html">Speaker Outlines</a>
+                <a href="aida.html">AIDA Model</a> 
+                <a href="index.html#register" class="btn btn-nav">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for AIDA Page -->
+    <section class="hero" style="background: linear-gradient(rgba(0, 65, 101, 0.8), rgba(0, 65, 101, 0.8)), url('https://images.unsplash.com/photo-1544006659-bf738e4a9e52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>The AIDA Model: Your Persuasion Blueprint</h1>
+            <p class="hero-subtitle">Master the art of influential communication, from capturing attention to inspiring action.</p>
+        </div>
+    </section>
+
+    <!-- AIDA Content Section -->
+    <section class="section">
+        <div class="container page-content">
+            <h2 class="section-title">Why AIDA for Personal Branding?</h2>
+            <p class="section-subtitle">The AIDA model is a timeless framework for crafting compelling messages that resonate and drive results. For personal branding and public speaking, it's your secret weapon to ensure your message isn't just heard, but *felt* and *acted upon*.</p>
+            
+            <div class="content-card attention">
+                <h3><i class="fas fa-bullseye"></i> Attention: The Hook</h3>
+                <p>This is where you **grab your audience's immediate notice**. In a world flooded with information, if you don't capture attention quickly, your message is lost. Think of it as your opening statement – it needs to be powerful, intriguing, or disruptive.</p>
+                <ul>
+                    <li>**Goal:** Interrupt their current thoughts. Make them curious.</li>
+                    <li>**Tactics:** Start with a shocking statistic, a bold question, a compelling anecdote, or a relatable problem.</li>
+                </ul>
+                <div class="example-box">
+                    <p><em>**Example for "The LinkedIn Glow-Up" Speech:**</em> "You’ve spent hours crafting the perfect resume, but what about the first place recruiters, clients, and collaborators truly look? Your **LinkedIn profile**. Is it a beacon of your brilliance, or… a digital tumbleweed?"</p>
+                </div>
+            </div>
+
+            <div class="content-card interest">
+                <h3><i class="fas fa-search-dollar"></i> Interest: The Engagement</h3>
+                <p>Once you have their attention, you need to **sustain their curiosity** and show them why your message is relevant *to them*. This isn't just about dumping facts; it's about connecting your topic to their needs, desires, or challenges.</p>
+                <ul>
+                    <li>**Goal:** Explain 'What's in it for me?' (WIIFM). Keep them engaged.</li>
+                    <li>**Tactics:** Share compelling facts, surprising insights, connect to personal goals, use vivid descriptions.</li>
+                </ul>
+                <div class="example-box">
+                    <p><em>**Example for "Power Pose Rhetoric" Speech:**</em> "Research, including work by Harvard's Amy Cuddy, suggests that adopting expansive, open poses can actually change your physiology – lowering cortisol (stress hormone) and increasing testosterone (confidence hormone). It's not just about how others see you; it's about how you *feel*."</p>
+                </div>
+            </div>
+
+            <div class="content-card desire">
+                <h3><i class="fas fa-heart"></i> Desire: The Aspiration</h3>
+                <p>Now, you transition from engaging their minds to **engaging their emotions**. Make them *want* what you're offering – the solution, the benefit, the transformation. Help them envision a better future with your idea or product.</p>
+                <ul>
+                    <li>**Goal:** Create an emotional connection. Paint a picture of the positive outcome.</li>
+                    <li>**Tactics:** Share success stories, demonstrate benefits, address objections, highlight unique advantages.</li>
+                </ul>
+                <div class="example-box">
+                    <p><em>**Example for "The Elevator Pitch Seduction" Speech:**</em> "Imagine confidently introducing yourself, seeing heads nod, and hearing, 'Tell me more!' Picture a networking event where you leave a trail of intriguing connections instead of polite shrugs."</p>
+                </div>
+            </div>
+
+            <div class="content-card action">
+                <h3><i class="fas fa-bolt"></i> Action: The Call to Move</h3>
+                <p>Finally, you tell your audience **exactly what you want them to do next**. Make your call to action clear, simple, and compelling. Don't leave them guessing; guide them to the desired next step.</p>
+                <ul>
+                    <li>**Goal:** Provide clear, specific instructions. Reinforce benefits of taking action.</li>
+                    <li>**Tactics:** Give a direct command, offer a sign-up, prompt reflection, or encourage practice.</li>
+                </ul>
+                <div class="example-box">
+                    <p><em>**Example for "Brand or Bland?" Speech:**</em> "Your personal brand is your most valuable asset. Begin your brand audit today. Commit to identifying one area where your brand is currently 'bland' and strategize how to infuse it with your unique **authority** and spark."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>PR Pros Toastmasters</h3>
+                <p>Empowering professionals to master the art of public relations and persuasive communication through practical experience and expert guidance.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="agenda.html">Workshop Agenda</a>
+                <a href="speakers.html">Speaker Outlines</a>
+                <a href="aida.html">AIDA Model</a> 
+                <a href="index.html#register">Enroll in Workshops</a>
+            </div>
+            
+            <div class="footer-social">
+                <h3>Connect With Our Authority</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/PRProsToastmasters/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/PRProsTM" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/pr-pros-toastmasters/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 PR Pros Toastmasters. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
