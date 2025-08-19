@@ -180,28 +180,38 @@ nav {
 /* Specific Hero backgrounds for each page */
 .hero-home {
     background: linear-gradient(rgba(0, 65, 101, 0.7), rgba(0, 65, 101, 0.7)),
-                url('https://images.unsplash.com/photo-1552588301-ad579ce34e34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                url('https://placehold.co/1470x800/004165/F2DF74?text=CEO+Whisperer+Workshop');
+    background-size: cover;
+    background-position: center;
     min-height: 100vh; /* Restore full height for home */
 }
 
 .hero-agenda {
     background: linear-gradient(rgba(0, 41, 65, 0.85), rgba(0, 41, 65, 0.85)),
-                url('https://images.unsplash.com/photo-1517436034177-3e120155b572?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                url('https://placehold.co/1470x800/004165/F2DF74?text=Workshop+Timeline');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-speakers {
     background: linear-gradient(rgba(119, 36, 50, 0.8), rgba(119, 36, 50, 0.8)),
-                url('https://images.unsplash.com/photo-1517487881023-524671404505?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                url('https://placehold.co/1470x800/772432/F2DF74?text=Speaker+Insights');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-aida {
     background: linear-gradient(rgba(0, 65, 101, 0.8), rgba(0, 65, 101, 0.8)),
-                url('https://images.unsplash.com/photo-1544006659-bf738e4a9e52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                url('https://placehold.co/1470x800/004165/F2DF74?text=AIDA+Model');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-resources {
     background: linear-gradient(rgba(0, 65, 101, 0.8), rgba(0, 65, 101, 0.8)),
-                url('https://images.unsplash.com/photo-1557804506-6927a7c152a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+                url('https://placehold.co/1470x800/004165/F2DF74?text=Resources+&+Tools');
+    background-size: cover;
+    background-position: center;
 }
 
 /* === HOME PAGE SPECIFIC STYLES === */
