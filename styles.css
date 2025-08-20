@@ -179,8 +179,8 @@ nav {
 
 /* Specific Hero backgrounds for each page */
 .hero-home {
-    background: linear-gradient(rgba(0, 65, 101, 0.7), rgba(0, 65, 101, 0.7)),
-                url('https://placehold.co/1470x800/004165/F2DF74?text=CEO+Whisperer+Workshop');
+    background: linear-gradient(rgba(0, 65, 101, 0.3), rgba(0, 65, 101, 0.3)),
+                url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Restore full height for home */
@@ -1334,3 +1334,4 @@ form label {
 .testimonial-card:nth-child(1) { animation-delay: 0.2s; }
 .testimonial-card:nth-child(2) { animation-delay: 0.4s; }
 .testimonial-card:nth-child(3) { animation-delay: 0.6s; }
+
